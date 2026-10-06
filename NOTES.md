@@ -32,3 +32,6 @@ These rules are a guardrail, not a hard security boundary. `Read(./.env)` doesn'
 - `/memory`: TODO, confirm `CLAUDE.md` shows as loaded.
 - `/permissions`: TODO, confirm the allow, ask and deny rules are listed.
 - "How do I run the tests here?" in a fresh session: TODO, confirm Claude answers from `CLAUDE.md`.
+
+## Update's Info:
+- I have already run claude and type /memory and /permissions and all loads correctly works!
