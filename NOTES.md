@@ -25,13 +25,13 @@ I left out:
 
 Without the deny rules, Claude could read `.env` while exploring the project. Any real secrets in it, such as a database URL with a password, would then be in the conversation and could leak into code, commits or logs. A force-push could overwrite commits other people have pushed, and that is hard to undo. The deny rules take priority over the `git push` ask rule, so a force-push is blocked outright instead of being one click away.
 
-These rules are a guardrail, not a hard security boundary. `Read(./.env)` doesn't stop a shell command like `cat .env`. A force flag placed later in the command (`git push origin main --force`) is not matched by the deny rule, but it still hits the `git push` confirmation prompt.
+Each rule exists twice, as `Bash(...)` and as `PowerShell(...)`. On Windows, Claude Code can run commands through PowerShell, and `Bash(...)` rules don't match those commands. On this machine `git` isn't on Git Bash's PATH, so git commands went through PowerShell, and a `git push` ran without the confirmation prompt until the PowerShell rules were added. The Bash rules stay for macOS, Linux and Git Bash setups.
+
+These rules are a guardrail, not a hard security boundary. `Read(./.env)` doesn't stop a shell command like `cat .env` or PowerShell's `Get-Content .env`. A force flag placed later in the command (`git push origin main --force`) is not matched by the deny rule, but it still hits the `git push` confirmation prompt.
 
 ## Verification
 
 - `/memory`: confirmed, `CLAUDE.md` shows as loaded.
 - `/permissions`: confirmed, the allow, ask and deny rules are listed.
 - "How do I run the tests here?" in a fresh session: confirmed, Claude answers from `CLAUDE.md`.
-
-## Update's Info:
-- I have already run claude and type /memory and /permissions and all loads correctly works!
+- PowerShell rules: TODO, confirm `/permissions` lists the `PowerShell(...)` rules and that `git push` through PowerShell asks for confirmation.
