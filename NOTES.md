@@ -29,6 +29,8 @@ Each rule exists twice, as `Bash(...)` and as `PowerShell(...)`. On Windows, Cla
 
 These rules are a guardrail, not a hard security boundary. `Read(./.env)` doesn't stop a shell command like `cat .env` or PowerShell's `Get-Content .env`. A force flag placed later in the command (`git push origin main --force`) is not matched by the deny rule, but it still hits the `git push` confirmation prompt.
 
+The repo's `.gitignore` also needed a fix. Its entries started with spaces, so Git never matched `.env` or `.claude/settings.local.json`, and a real `.env` could have been committed. With the spaces removed, `git check-ignore` confirms both are ignored.
+
 ## Verification
 
 - `/memory`: confirmed, `CLAUDE.md` shows as loaded.
