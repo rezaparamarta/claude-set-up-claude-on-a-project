@@ -8,8 +8,13 @@
     "ecmaVersion": 2022,
     "sourceType": "script"
   },
-  "extends": "eslint:recommended",
+  "extends": ["eslint:recommended", "prettier"],
   "rules": {
-    "no-unused-vars": ["warn", { "argsIgnorePattern": "^(_|req|res|next)$" }]
+    "no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^(_|req|res|next)$"
+      }
+    ]
   }
 }

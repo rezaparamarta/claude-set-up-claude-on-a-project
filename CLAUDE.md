@@ -10,6 +10,7 @@ A small Express REST API (users + health check) backed by an in-memory store, us
 - `npm test` — run all tests with the built-in `node:test` runner
 - `node --test tests/users.test.js` — run one test file; add `--test-name-pattern="404"` to run matching tests only
 - `npm run lint` — ESLint (`eslint:recommended`); CI runs lint then tests on Node 22, so both must pass
+- `npm run format` / `npm run format:check` — Prettier (config in `.prettierrc.json`; `hooks-lab/` is ignored). A PostToolUse hook in `.claude/settings.json` runs Prettier on every file Claude edits or writes
 
 ## Conventions
 

@@ -45,9 +45,9 @@ npm run lint     # checks code style
    claude --version
    ```
 3. Get this repo onto your machine and open a terminal in the project folder. **Opening a terminal** (the app where you type commands):
-    -   **Mac** - press `Cmd + Space`, type "Terminal", press Enter.
-    -   **Windows** - open "Terminal" or "PowerShell" from the Start menu.
-    -   **Linux** - open your "Terminal" app (often `Ctrl + Alt + T`).**Getting into the project folder** - copy the repo to your machine, then move into it:
+   - **Mac** - press `Cmd + Space`, type "Terminal", press Enter.
+   - **Windows** - open "Terminal" or "PowerShell" from the Start menu.
+   - **Linux** - open your "Terminal" app (often `Ctrl + Alt + T`).**Getting into the project folder** - copy the repo to your machine, then move into it:
 
 ```
    git clone <your-repo-url>
